@@ -8,6 +8,7 @@ export interface CircleData {
   color: string;
   gotClicked: boolean;
   timeClicked: number;
+  visible: boolean;
 }
 
 

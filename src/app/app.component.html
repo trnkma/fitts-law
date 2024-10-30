@@ -1,17 +1,24 @@
 <div class="container">
+    @if(!startedGame) {
+    <div class="message-wrapper">
+        Try to hit all the circles as fast as possible.
+        <button (click)="startGame()">Go</button>
+    </div>
+    }@else {
     @for (circle of circles; track $index) {
-        <app-circle [circleData]="circle" (onCircleClick)="circleClicked($event)"></app-circle>
+    <app-circle [circleData]="circle" (onCircleClick)="circleClicked($event)"></app-circle>
+    }
     }
     @if(hasFinishedBigCircles && !isPlaying && !hasFinishedSmallCircles) {
-        <div class="result-wrapper">
-            Now try to click all the circles again but this time they will be smaller!
-            <button (click)="playSmallCircles()">Continue</button>
-        </div>
+    <div class="message-wrapper">
+        Now try to click all the circles again but this time they will be smaller!
+        <button (click)="playSmallCircles()">Go</button>
+    </div>
     }
     @if(finishedGame) {
-        <div class="result-wrapper">
-            Big Circles average time: {{this.result.bigCirclesAVGTime}};
-            Small Circles average time: {{this.result.smallCirclesAVGTime}};
-        </div>
+    <div class="message-wrapper">
+        Big Circles average time: <div class="time">{{this.result.bigCirclesAVGTime}}ms</div>
+        Small Circles average time: <div class="time">{{this.result.smallCirclesAVGTime}}ms</div>
+    </div>
     }
 </div>

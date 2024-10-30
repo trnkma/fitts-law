@@ -1,1 +1,3 @@
-<div class="circle" (click)="onClick()" [ngStyle]="style" [class.animate]="circleData.gotClicked"><div class="circle-number">{{circleData.id}} </div>@if(circleData.timeClicked){{{circleData.timeClicked}}ms}</div>
+@if(circleData.visible) {
+    <div class="circle" (click)="onClick()" [ngStyle]="style" [class.animate]="circleData.gotClicked"></div>
+}

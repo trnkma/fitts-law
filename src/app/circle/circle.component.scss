@@ -11,7 +11,7 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     font-family: 'roboto';
     &.animate {
-        animation: clicked 0.2s ;
+        animation: clicked 0.2s forwards;
     }
 
     .circle-number {
@@ -33,5 +33,5 @@
 @keyframes clicked {
     0% {transform: scale(1);}
     50% {transform: scale(1.2);}
-    100% {transform: scale(1);}
+    100% {transform: scale(1); opacity: 0;}
 }
