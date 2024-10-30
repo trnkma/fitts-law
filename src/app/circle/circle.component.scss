@@ -1,0 +1,37 @@
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-family: 'roboto';
+    &.animate {
+        animation: clicked 0.2s ;
+    }
+
+    .circle-number {
+        background-color: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 72px;
+        color:rgba(82, 82, 82, 0.35);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+@keyframes clicked {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% {transform: scale(1);}
+}
